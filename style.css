@@ -49,6 +49,12 @@
     font-size: 2em;
     text-align: center;
 }*/
+body{
+
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+
 footer{
     padding:10px;
     background-color: #696969;
