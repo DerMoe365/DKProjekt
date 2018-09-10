@@ -85,29 +85,19 @@ opacity: 0.7;
     color: white;
 }
 
-
 .navbar {
-    background: #373737;
-    font-family: "Segoe UI",Arial,sans-serif;
-    Font-size: 18px;
-    Font-weight: bold;
-    }
+  background: #373737;
+  Font-size: 18px;
+  Font-weight: bold;
+}
+.navbar-logo>img{
+  width: 220px;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: -80%;
+}
 
-.navbar-brand {
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 110%;
-    position: absolute;
-  }
-
-  .navbar-brand {
-    padding: 0px;
-  }
-  .navbar-brand>img {
-    height: 300%;
-    width: auto;
-    padding: 0px 0px;
-  }
 
   body{
     background-color: #696969;
