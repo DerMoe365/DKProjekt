@@ -46,17 +46,10 @@ body{
 
 footer{
     padding:10px;
-    background-color: #373737
+    background-color: #373737;
     color: white;
 
 }
-
-hr {
-    background-color:#ffbf00;
-    color:#ffbf00;
-    border:#ffbf00;
-    height:1px;
-  }
 .fa{
     padding: 0px;
     font-size: 40px;
@@ -71,43 +64,32 @@ opacity: 0.7;
 .fa-facebook{
 
     color: white;
-    text-shadow: 5px 8px 15px #000000;
 }
 
 .fa-instagram{
     color: white;
-    text-shadow: 5px 8px 15px #000000;
-}
-p.name{
-    font-size: 24px;
-
-}
-
-img.logofooter{
-    height:75px ;
-    width:100px ;
-}
-a{
-    color:white;
-}
-
-a:hover{
-    color: #ffbf00;
-    text-decoration: none;
 }
 
 .navbar {
   background: #373737;
   font-family: 'Montserrat', sans-serif;
-  Font-size: 18px;
+  Font-size: 20px;
   Font-weight: bold;
 }
-.navbar-logo>img{
+
+.nav.navbar-nav>li>a {
+    color: #ffbf00 !important;
+}
+
+.navbar-brand>img{
   width: 220px;
   position: absolute;
   transform: translateX(-50%);
-  left: 50%;
+  left: 49%;
   bottom: -80%;
+}
+.nav-link{
+    margin: 5px;
 }
 
 .col-md-6{
