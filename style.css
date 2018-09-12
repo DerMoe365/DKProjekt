@@ -13,30 +13,6 @@
 
       }
 
-
-/* Footer and Social Media Style*/
-/*.footer{
-    background-color: #696969;
-   position: fixed;
-   padding: 0;
-   height: 50px;
-  
- margin:auto;
-}
-#test2 p{
-    background-color: #696969;
-    background-clip: initial;
-    font: arial;
-    color: white;
-    text-align: center;
-    
-}
-#social {
-    background-color: #696969;
-    background-clip: initial;
-    font-size: 2em;
-    text-align: center;
-}*/
 body{
     background-color: #4b4b4b;
     color: white;
@@ -56,18 +32,19 @@ footer{
     width: 40px;
     text-align: center;
     text-decoration: none;
+    text-shadow: 5px 8px 15px #000000;
+    color: white;
 }
 .fa:hover{
 opacity: 0.7;
 }
 
-.fa-facebook{
-
-    color: white;
+hr{
+  background-color:  #ffbf00 ;
 }
+p.name{
+    font-size: 24px;
 
-.fa-instagram{
-    color: white;
 }
 
 .navbar {
