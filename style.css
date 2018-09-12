@@ -48,26 +48,39 @@ p.name{
 }
 
 .navbar {
-  background: #373737;
-  font-family: 'Montserrat', sans-serif;
-  Font-size: 20px;
-  Font-weight: bold;
+    background: #373737;
+    font-family: 'Montserrat', sans-serif;
+    Font-size: 20px;
+    Font-weight: bold;
 }
 
-.nav.navbar-nav>li>a {
+.nav-link {
     color: #ffbf00 !important;
-}
-
-.navbar-brand>img{
-  width: 220px;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 49%;
-  bottom: -80%;
-}
-.nav-link{
     margin: 5px;
 }
+
+.navbar-brand {
+    min-width: 220px;
+    width: 220px;
+    height: 56px;
+    position: relative;
+    transform: none;
+    left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand img {
+    width: 220px;
+    position: absolute;
+    margin-top: -45px;
+}
+
+a.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 
 .col-md-6{
     padding: 2em;
@@ -79,4 +92,19 @@ p.name{
 }
 h1{
     font-weight: bold;
+}
+
+/* always in the end of css */
+@media (max-width: 990px) {
+    .navbar-brand {
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .navbar-brand img {
+        width: 200px;
+        margin-top: -50px;
+    }
 }
