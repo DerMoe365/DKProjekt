@@ -6,7 +6,7 @@
   <meta name="title" content="V&#8364;SOAR" /> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- use the latest ie version if possible -->
   <meta charset="utf-8"> <!-- utf8 charset -->
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile scalling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no"> <!-- mobile scalling -->
 
   <link rel="shortcut icon" href="/img/icon/favicon.png" type="image/png; charset=binary" sizes="32x32"> <!-- favicon shortcut -->
   <link rel="icon" href="/img/icon/favicon.png" type="image/png; charset=binary" sizes="32x32"> <!-- favicon -->
@@ -45,7 +45,7 @@
       <!--CarouselEnd-->
 
    <!--Start Nav-Bar-->
-   <nav class="navbar navbar-expand-lg navbar-dark sticky-top ">
+   <nav class="navbar navbar-expand-lg navbar-inverse sticky-top navbar-dark ">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -54,13 +54,13 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT ME</a>
+                <a class="nav-link" href="#pi">ABOUT ME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">TATTOOS</a>
+                <a class="nav-link" href="#tattoos">TATTOOS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">DRAWINGS</a>
+                <a class="nav-link" href="#drawings">DRAWINGS</a>
             </li>
         </ul>
     </div>
@@ -70,22 +70,22 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">3D ART</a>
+                <a class="nav-link" href="#art">3D ART</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">STREET ART</a>
+                <a class="nav-link" href="#street">STREET ART</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">GRAPHIC DESIGN</a>
+                <a class="nav-link" href="#graphic">GRAPHIC DESIGN</a>
             </li>
         </ul>
     </div>
   
 </nav>
 <!-- End Navbar -->
-
+<p id='pi'></p>
 <!-- Start PI -->
-<div class= " container-fluid padding" id="Personal">
+<div class= " container-fluid padding" >
   <div class=" row text center padding">
     <div class= " col-md-4 ">
       <img src="img/Personal/firstpersonal.jpg" class="rounded float-left" alt="Veselin Vidolov" style="width:100%">
@@ -98,12 +98,12 @@
       $( "#PI" ).load( "text/Personal.txt" );
     </script>
   </div></div>
-  <hr class="hrleft">
+  <hr class="hrleft" id="tattoos">
 
 <!-- End PI -->
 
 <!--Start Gallary-->
-<div class= " container-fluid padding" id="Tattoo">
+<div class= " container-fluid padding" >
   <div class=" row text left padding">
     <div class= " col-md-6">
       <h1>TATTOOS</h1>
@@ -117,9 +117,9 @@
 </div>
 
 
-  <hr class="hrright">
+  <hr class="hrright" id="drawings">
 
-  <div class= " container-fluid padding" id="Drawings">
+  <div class= " container-fluid padding" >
     <div class=" row text right padding" >
       <div class= " col-md-6">
         <h1>DRAWINGS</h1>
@@ -132,13 +132,13 @@
     </div>
   </div>
   
-    <hr class="hrright">
+    <hr class="hrleft" id="art">
 
-    <div class= " container-fluid padding" id="art">
+    <div class= " container-fluid padding" >
       <div class=" row text right padding" >
         <div class= " col-md-6">
           <h1>3D ART</h1>
-         <p class="text-right" id='art'></p>
+         <p id='ART'></p>
         </div>
         <script>
           $( "#ART" ).load( "text/Art.txt" );
@@ -146,13 +146,13 @@
       </div>
     </div>
 
-      <hr class="hrleft">
+      <hr class="hrright" id="street">
 
-      <div class= "container-fluid padding " id="Street">
+      <div class= "container-fluid padding " >
         <div class=" row text left padding">
           <div class= "col-md-6">
             <h1>STREET ART</h1>
-           <p id='Street'></p>
+           <p id='STREET'></p>
           </div>
           <script>
             $( "#STREET" ).load( "text/Streetart.txt" );
@@ -160,16 +160,16 @@
       </div>
     </div>
 
-    <hr class="hrright">
+    <hr class="hrleft" id='graphic'>
 
-    <div class= " container-fluid padding" id="graphic">
+    <div class= " container-fluid padding" >
       <div class=" row text left padding">
         <div class= " col-md-6">
           <h1>GRAPHIC DESIGN</h1>
-         <p id='graphic'></p>
+         <p id='GRAPHIC'></p>
         </div>
         <script>
-          $( "#GRAPHIC" ).load( "text/graphicdesign.txt" );
+          $( "#GRAPHIC" ).load( "text/Design.txt" );
         </script>
     </div>
     </div>
@@ -202,5 +202,26 @@
   </div>
       </footer>
 <!--End Footer-->
+<script>
+$(document).ready(function() {
+  $(window).on("scroll", function() {
+    if ($(window).scrollTop() >= 600) {
+      $(".navbar").addClass("compressed");
+    } else {
+      $(".navbar").removeClass("compressed");
+    }
+  });
+});
+
+$(document).ready(function() {
+  $(window).on("scroll", function() {
+    if ($(window).scrollTop() >= 400) {
+      $(".navbar").addClass("shrink");
+    } else {
+      $(".navbar").removeClass("shrink");
+    }
+  });
+});
+</script>
 </body>
 </html>
