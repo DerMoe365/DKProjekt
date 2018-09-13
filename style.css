@@ -57,10 +57,13 @@ hr.hrright{
     background-image: linear-gradient(to left,#ffbf00,transparent);
    }
 hr.footer{
-    width: 25%;
+    width: 50%;
     border:0;
  height: 1px;
  background-image: linear-gradient(to right,#373737,#ffbf00,#373737); 
+ margin: 0 auto;
+ margin-top: 10px;
+ margin-bottom: 10px;
 }
 
 p.name{
@@ -83,8 +86,8 @@ p.name{
 
 .nav-link {
     color: #ffbf00 !important;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
 
 }
 
