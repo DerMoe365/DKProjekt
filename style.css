@@ -33,17 +33,35 @@ footer{
     text-align: center;
     text-decoration: none;
     text-shadow: 5px 8px 15px #000000;
-    color: white;
+    color: #ffbf00;
 }
 .fa:hover{
 opacity: 0.7;
 }
-
-hr{
-  background-color:  #ffbf00 ;
+.logofooter{
+    width:100px;
+    height: 75px;
 }
+hr.hrleft{
+ border:0;
+ height: 1px;
+ background-image: linear-gradient(to right,#ffbf00,transparent);
+}
+hr.hrright{
+    border:0;
+    height: 1px;
+    background-image: linear-gradient(to left,#ffbf00,transparent);
+   }
+hr.footer{
+    width: 25%;
+    border:0;
+ height: 1px;
+ background-image: linear-gradient(to right,#373737,#ffbf00,#373737); 
+}
+
 p.name{
     font-size: 24px;
+    color: white;
 
 }
 
