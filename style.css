@@ -27,6 +27,7 @@ footer{
     padding:10px;
     background-color: #373737;
     color: white;
+    
 
 }
 .fa{
@@ -68,7 +69,16 @@ hr.footer{
 p.name{
     font-size: 24px;
     color: white;
+    padding-bottom: 4px;
 
+}
+
+.karte {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+            filter: grayscale(100%) brightness(70%) contrast(200%);
 }
 
 .navbar {
