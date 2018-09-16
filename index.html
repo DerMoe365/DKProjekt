@@ -15,10 +15,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- font icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100"> <!-- custom font -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--Icons-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--Socialmedia Icons-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> <!--Bootstrap---->
 
   <link rel="stylesheet" href="style.css"> <!-- homepage style -->
+
+  <link rel="icon" href="img/icon/icon.png">
+
 </head>
 
 <body>
@@ -83,8 +86,9 @@
   
 </nav>
 <!-- End Navbar -->
-<p id='pi'></p>
+
 <!-- Start PI -->
+<p id='pi'></p>
 <div class= " container-fluid padding" >
   <div class=" row text center padding">
     <div class= " col-md-4 ">
@@ -99,40 +103,52 @@
     </script>
   </div></div>
   <hr class="hrleft" id="tattoos">
-
 <!-- End PI -->
 
 <!--Start Gallary-->
-<div class= " container-fluid padding" >
-  <div class=" row text left padding">
-    <div class= " col-md-6">
-      <h1>TATTOOS</h1>
-     <p id='TATTOOS'></p>
-    </div>
-    <script>
-      $( "#TATTOOS" ).load( "text/Tattoos.txt" );
-    </script>
-    
-  </div>
-</div>
 
 
-  <hr class="hrright" id="drawings">
-
-  <div class= " container-fluid padding" >
-    <div class=" row text right padding" >
-      <div class= " col-md-6">
-        <h1>DRAWINGS</h1>
-       <p id='DRAWINGS'></p>
+<!--Start Tattoos-->
+  <div class="row">
+      <div class="col-sm-9">
+          <h1>TATTOOS</h1>
+        <div class="row">
+          <div class="col-8 col-sm-6">
+              <p id='TATTOOS'></p>
+              <script>
+                 $( "#TATTOOS" ).load( "text/Tattoos.txt" );
+               </script>
+          </div>
+          <div class="col-4 col-sm-6">
+              <img src="img/TATTOOS/32074010_1854053337948418_5582761979270922240_n.jpg">
+          </div>
+        </div>
       </div>
-      <script>
-        $( "#DRAWINGS" ).load( "text/Drawings.txt" );
-      </script>
-      
     </div>
-  </div>
+<!--End Tattoos-->
+<hr class="hrright" id="drawings"> <!--Right Line-->
+
+<!--Start Drawings-->
   
-    <hr class="hrleft" id="art">
+  
+  <div class="row">
+      <div class="col-sm-9">
+          <h1>DRAWINGS</h1>
+        <div class="row">
+          <div class="col-8 col-md-6">
+              <img src="img/DRAWINGS/02.jpg">
+          </div>
+          <div class="col-8 col-sm-6">
+              <p id='DRAWINGS'></p>
+              <script>
+                 $( "#DRAWINGS" ).load( "text/Drawings.txt" );
+               </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <hr class="hrleft" id="art">
 
     <div class= " container-fluid padding" >
       <div class=" row text right padding" >
@@ -175,7 +191,6 @@
     </div>
 </div>
 <!--End Gallary-->
-
 <!--Footer Start-->
 
 <footer>
