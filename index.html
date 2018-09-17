@@ -87,7 +87,8 @@
 </nav>
 <!-- End Navbar -->
 
-<!-- Start PI -->
+<!-- Start Personal Information -->
+<section>
 <p id='pi'></p>
 <div class= " container-fluid padding" >
   <div class=" row text center padding">
@@ -102,95 +103,100 @@
       $( "#PI" ).load( "text/Personal.txt" );
     </script>
   </div></div>
+</section>
   <hr class="hrleft" id="tattoos">
 <!-- End PI -->
 
-<!--Start Gallary-->
-
-
 <!--Start Tattoos-->
-  <div class="row">
-      <div class="col-sm-9">
-          <h1>TATTOOS</h1>
+ <section >
+          
         <div class="row">
-          <div class="col-8 col-sm-6">
+          <div class="col-8 col-md-6">
+            <h1>TATTOOS</h1>
               <p id='TATTOOS'></p>
               <script>
                  $( "#TATTOOS" ).load( "text/Tattoos.txt" );
                </script>
           </div>
-          <div class="col-4 col-sm-6">
+          <div class="col-8 col-md-6">
               <img src="img/TATTOOS/32074010_1854053337948418_5582761979270922240_n.jpg">
           </div>
         </div>
-      </div>
-    </div>
+  </section>
 <!--End Tattoos-->
 <hr class="hrright" id="drawings"> <!--Right Line-->
 
 <!--Start Drawings-->
   
-  
-  <div class="row">
-      <div class="col-sm-9">
-          <h1>DRAWINGS</h1>
+  <section>
         <div class="row">
           <div class="col-8 col-md-6">
               <img src="img/DRAWINGS/02.jpg">
           </div>
-          <div class="col-8 col-sm-6">
+          <div class="col-8 col-md-6 pull-right">
+            <h1>DRAWINGS</h1>
               <p id='DRAWINGS'></p>
               <script>
                  $( "#DRAWINGS" ).load( "text/Drawings.txt" );
                </script>
           </div>
         </div>
-      </div>
-    </div>
-    
+      
+  </section>
+
   <hr class="hrleft" id="art">
 
-    <div class= " container-fluid padding" >
-      <div class=" row text right padding" >
-        <div class= " col-md-6">
+  <!--Start 3D Art-->
+  <section>
+    <div class= "row" >
+        <div class= "col-8 col-md-6">
           <h1>3D ART</h1>
          <p id='ART'></p>
-        </div>
         <script>
           $( "#ART" ).load( "text/Art.txt" );
         </script>
       </div>
+      <div class="col-8 col-md-6">
+          <img src="img/3D/01.jpg">
+      </div>
     </div>
-
+  </section>
       <hr class="hrright" id="street">
 
-      <div class= "container-fluid padding " >
-        <div class=" row text left padding">
-          <div class= "col-md-6">
+   <!--Start Street Art-->
+   <section>
+      <div class= "row" >
+        <div class="col-8 col-md-6">
+           <img src="img/murals/capture.jpg">
+        </div>
+          <div class= "col-8 col-md-6 pull-right">
             <h1>STREET ART</h1>
            <p id='STREET'></p>
-          </div>
           <script>
             $( "#STREET" ).load( "text/Streetart.txt" );
           </script>
       </div>
     </div>
-
+  </section>
     <hr class="hrleft" id='graphic'>
-
-    <div class= " container-fluid padding" >
-      <div class=" row text left padding">
-        <div class= " col-md-6">
-          <h1>GRAPHIC DESIGN</h1>
-         <p id='GRAPHIC'></p>
+  <!--Start Graphic Design-->
+  <section>  
+      <div class="row">
+          <div class="col-8 col-md-6">
+            <h1>GRAPHIC DESIGN</h1>
+              <p id='GRAPHIC'></p>
+              <script>
+                 $( "#GRAPHIC" ).load( "text/Design.txt" );
+               </script>
+          </div>
+          <div class="col-8 col-md-6">
+              <img src="img/GDESIGN/02.jpg">
+          </div>
         </div>
-        <script>
-          $( "#GRAPHIC" ).load( "text/Design.txt" );
-        </script>
-    </div>
-    </div>
-</div>
-<!--End Gallary-->
+</section>
+
+
+
 <!--Footer Start-->
 
 <footer>
