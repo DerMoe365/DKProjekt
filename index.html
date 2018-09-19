@@ -22,6 +22,83 @@
   <link rel="stylesheet" href="style.css"> <!-- homepage style -->
   <link rel="icon" href="img/icon/icon.png"> <!--TABICON-->
 
+  	<script type="text/javascript" src="jquery.js"></script>
+	<script>
+	var files = [];
+	var isFilesUpdated = false;
+	
+	inner();
+	
+    async function inner() {
+        if (!isFilesUpdated)
+		{
+			loadFileNameArray();
+            console.log("Sleeping");
+            await sleep(1000);
+            console.log("Finished sleeping > check again");
+            return inner();
+        } else {
+		console.log("Files Array => " + files);
+			files.forEach(function(element)
+				{
+					console.log(element);
+					var newImage = document.createElement("IMG");
+					newImage.setAttribute("src", element);
+					newImage.setAttribute("width", "304");
+					newImage.setAttribute("height", "228");
+					document.getElementById("image_container").appendChild(newImage);
+				});
+			}
+	}
+	
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+	
+    function ajaxGetFileNames() {
+        return $.when($.ajax({
+                url: '/files.php',
+                method: 'POST',
+                data: 'get_file_json',
+                dataType: 'json'
+            }))
+            .then(null, function(jqXHR, textStatus, errorThrown) {
+			    console.log("XHR: ", jqXHR);
+				console.log("Err textStatus: ", textStatus);
+				console.log("Err thrown: ", errorThrown);
+                alert("Error sending request: " + errorThrown);
+            });
+    }
+	
+    async function fetchJSONResponseData(ajax) {
+        try {
+            var myJSONReturn = await ajax;
+            console.log('async myJSONReturn:', myJSONReturn);
+            return myJSONReturn;
+        } catch (error) {
+            console.log('Error in fetchJSONResponseData:', error);
+        }
+    }
+	
+    function loadFileNameArray() {
+        try {
+            fetchJSONResponseData(ajaxGetFileNames()).then(function(data) {
+                    console.log('loadedFileNames data:', data);
+					isFilesUpdated = true;
+                    files = data;
+                },
+                function(error) {
+                    console.log('Error in loadFileNameArray:', error);
+					isFilesUpdated = true;
+					files = "Error Loading FileNames !";
+                });
+        } catch (error) {
+            console.log('Error in loadPatients:', error);
+        }
+    }
+	</script>
+	
+
 </head>
 <body>
     <!--CarouselStart-->
@@ -117,25 +194,31 @@
                  $( "#TATTOOS" ).load( "text/Tattoos.txt" );
                </script>
           </div>
-          <div class="col-8 col-md-6">
-            <div class="row">
-              <div class="col">
-                <img src="img/tattoos/T1.jpg">
+          <div class="row text-center">
+              <div class="col-sm-6 col-md-3">
+                  <img src="img/tattoos/T1.jpg" width="300" height="300">
               </div>
-              <div class="col">
-                <img src="img/tattoos/T2.jpg">
+              <div class="col-sm-6 col-md-3">
+                  <img src="img/tattoos/T2.jpg" width="300" height="300">
               </div>
-              <div class="w-100"></div>
-              <div class="col">
-                <img src="img/tattoos/T3.jpg">
+              <div class="col-sm-6 col-md-3">
+                  <img src="img/tattoos/T3.jpg"width="300" height="300">
               </div>
-              <div class="col">
-                <img src="img/tattoos/T4.jpg">
+              <div class="col-sm-6 col-md-3">
+                  <img src="img/tattoos/T4.jpg" width="300" height="300">
               </div>
-            </div>
-          </div>
         </div>
   </section>
+  <button class="picgallary" data-toggle="collapse" data-target="#Mygallery">Click for more Pictures</button>
+  <div id="Mygallery" class="collapse">
+    <div class="container-fluid padding">
+      <div class="row text-center">
+        <div class="col-sm-6 col-md-3">
+            <img src="img/tattoos/T5.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
 <!--End Tattoos-->
 <hr class="hrright" id="drawings"> <!--Right Line-->
 

@@ -148,7 +148,25 @@ h1{
     font-weight: bold;
 }
 
+.picgallary {
+    width: 100%;
+    background-color: transparent;
+    color: #ffbf00;
+    border-color: transparent;
+    font-family: 'Montserrat', sans-serif;   
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1em;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
 
+
+}
+
+.Mygallery {
+    max-width: 100%;
+}
 /* always in the end of css */
 @media (max-width: 990px) {
 
