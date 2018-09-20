@@ -1,4 +1,4 @@
- * {margin: 0; padding: 0;}
+* {margin: 0; padding: 0;}
 
 .carousel-inner > .item > img{
     
@@ -19,7 +19,7 @@ body{
     color: white;
     font-family: 'Montserrat', sans-serif;   
     position: relative;
-
+    
 }
 
 
@@ -91,17 +91,16 @@ p.name{
     -moz-box-shadow: 0px -20px 33px 2px rgba(0,0,0,0.54);
     box-shadow: 0px -20px 33px 2px rgba(0,0,0,0.54);
     padding-left: 4%;
-    height: 50px;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    min-height: 50px;
     transition: all 0.3s;
 }
 
 .nav-link {
     color: #ffbf00 !important;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     letter-spacing: 3px;
+    outline: 0 !important;
 }
 
 .navbar-brand {
@@ -128,11 +127,18 @@ a.navbar-brand {
     padding-bottom: 0;
 }
 
+nav.navbar.sticky {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+
 .navbar.compressed{
     padding-top: 0px;
     padding-bottom: 0px;
 }
-
 
 .col-md-6{
     padding: 2em;
@@ -140,6 +146,9 @@ a.navbar-brand {
     width: 100%;
 }
 
+.col-md-5{
+    font-size: 20px;
+}
 
 .col-md-4{
     padding: 2em;
@@ -160,24 +169,53 @@ h1{
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
     outline:0 !important;
+  
 }
 
 .picgallary span {
         border: 1px solid #ffbf00;
     }
 
-
+.picgallary:hover{
+    opacity: 0.7;    
+}
 
 .Mygallery {
     max-width: 100%;
 }
+
+.row.tat{
+    padding-left: 30px;
+}
+
+.tz-gallery {
+    min-height: 100vh;
+    padding: 30px 50px;
+}
+
+/* Override bootstrap column paddings */
+.tz-gallery .row > div {
+    padding: 6px;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+.tat-gallery img{
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
 /* always in the end of css */
 @media (max-width: 990px) {
 
     .navbar{
         padding-top: 20px;
         padding-bottom: 10px;
-
     }
 
     .navbar-brand {
@@ -195,12 +233,20 @@ h1{
 
     .navbar-toggler {
         padding: 3px;
-        margin-top: -2%;
+        margin-top: -1%;
+        outline: 0 !important;
     }
 
     .navbar.shrink{
-        padding-top: 10px;
-    padding-bottom: 2px;
+        min-height: 35px;
+    }
+    
+    body {
+        padding: 0;
+    }
+
+    .col-md-5{
+        font-size: 16px;
     }
     
 

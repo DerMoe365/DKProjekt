@@ -22,81 +22,7 @@
   <link rel="stylesheet" href="style.css"> <!-- homepage style -->
   <link rel="icon" href="img/icon/icon.png"> <!--TABICON-->
 
-  	<script type="text/javascript" src="jquery.js"></script>
-	<script>
-	var files = [];
-	var isFilesUpdated = false;
-	
-	inner();
-	
-    async function inner() {
-        if (!isFilesUpdated)
-		{
-			loadFileNameArray();
-            console.log("Sleeping");
-            await sleep(1000);
-            console.log("Finished sleeping > check again");
-            return inner();
-        } else {
-		console.log("Files Array => " + files);
-			files.forEach(function(element)
-				{
-					console.log(element);
-					var newImage = document.createElement("IMG");
-					newImage.setAttribute("src", element);
-					newImage.setAttribute("width", "304");
-					newImage.setAttribute("height", "228");
-					document.getElementById("image_container").appendChild(newImage);
-				});
-			}
-	}
-	
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-	
-    function ajaxGetFileNames() {
-        return $.when($.ajax({
-                url: '/files.php',
-                method: 'POST',
-                data: 'get_file_json',
-                dataType: 'json'
-            }))
-            .then(null, function(jqXHR, textStatus, errorThrown) {
-			    console.log("XHR: ", jqXHR);
-				console.log("Err textStatus: ", textStatus);
-				console.log("Err thrown: ", errorThrown);
-                alert("Error sending request: " + errorThrown);
-            });
-    }
-	
-    async function fetchJSONResponseData(ajax) {
-        try {
-            var myJSONReturn = await ajax;
-            console.log('async myJSONReturn:', myJSONReturn);
-            return myJSONReturn;
-        } catch (error) {
-            console.log('Error in fetchJSONResponseData:', error);
-        }
-    }
-	
-    function loadFileNameArray() {
-        try {
-            fetchJSONResponseData(ajaxGetFileNames()).then(function(data) {
-                    console.log('loadedFileNames data:', data);
-					isFilesUpdated = true;
-                    files = data;
-                },
-                function(error) {
-                    console.log('Error in loadFileNameArray:', error);
-					isFilesUpdated = true;
-					files = "Error Loading FileNames !";
-                });
-        } catch (error) {
-            console.log('Error in loadPatients:', error);
-        }
-    }
-	</script>
+  
 	
 
 </head>
@@ -124,43 +50,45 @@
       <!--CarouselEnd-->
 
    <!--Start Nav-Bar-->
-   <nav class="navbar navbar-expand-lg navbar-inverse sticky-top navbar-dark ">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#pi">ABOUT ME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#tattoos">TATTOOS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#drawings">DRAWINGS</a>
-            </li>
-        </ul>
-    </div>
-    <a class="navbar-brand mx-auto" href="#">
-        <img src="img/icon/Logo.png">
-    </a>
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#art">3D ART</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#street">STREET ART</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#graphic">GRAPHIC DESIGN</a>
-            </li>
-        </ul>
-    </div>
-  
-</nav>
+   <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-inverse navbar-dark">
+     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+     </button>
+   
+     <div class="navbar-collapse collapse">
+         <ul class="nav navbar-nav ml-auto">
+             <li class="nav-item">
+                 <a class="nav-link" href="#pi">ABOUT ME</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#tattoos">TATTOOS</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#drawings">DRAWINGS</a>
+             </li>
+         </ul>
+     </div>
+     <a class="navbar-brand mx-auto" href="#">
+         <img src="img/icon/logo.png">
+     </a>
+     <div class="navbar-collapse collapse">
+         <ul class="nav navbar-nav mr-auto">
+             <li class="nav-item">
+                 <a class="nav-link" href="#art">3D ART</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#street">STREET ART</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#graphic">GRAPHIC DESIGN</a>
+             </li>
+         </ul>
+     </div>
+   
+ </nav>
+ </header>
 <!-- End Navbar -->
 
 <!-- Start Personal Information -->
@@ -186,50 +114,96 @@
 <!--Start Galary-->
 <!--Start Tattoos-->
  <section >
-        <div class="row">
-          <div class="col-8 col-md-6">
+   <div class="container-fluid">
+        <div class="row tat">
+          <div class="col-sm-12 col-md-5">
             <h1>TATTOOS</h1>
               <p id='TATTOOS'></p>
               <script>
                  $( "#TATTOOS" ).load( "text/Tattoos.txt" );
                </script>
           </div>
-          <div class="row text-center">
-              <div class="col-sm-6 col-md-3">
-                  <img src="img/tattoos/T1.jpg" width="300" height="300">
-              </div>
-              <div class="col-sm-6 col-md-3">
-                  <img src="img/tattoos/T2.jpg" width="300" height="300">
-              </div>
-              <div class="col-sm-6 col-md-3">
-                  <img src="img/tattoos/T3.jpg"width="300" height="300">
-              </div>
-              <div class="col-sm-6 col-md-3">
-                  <img src="img/tattoos/T4.jpg" width="300" height="300">
-              </div>
+      <div class="tz-gallery col-sm-12 col-md-7">
+          <div class="row">
+            <div class="col-sm-12 col-md-4">
+              <a class="lightbox" href="img/tattoos/T1.jpg">
+                  <img src="img/tattoos/T1.jpg" alt="Bridge">
+              </a>
+          </div>
+          <div class="col-sm-6 col-md-4">
+              <a class="lightbox" href="img/tattoos/T2.jpg">
+                  <img src="img/tattoos/T2.jpg" alt="Park">
+              </a>
+          </div>
+          <div class="col-sm-6 col-md-4">
+              <a class="lightbox" href="img/tattoos/T3.jpg">
+                  <img src="img/tattoos/T3.jpg" alt="Tunnel">
+              </a>
+          </div>
+          <div class="col-sm-12 col-md-6 ">
+              <a class="lightbox" href="img/tattoos/T4.jpg">
+                  <img src="img/tattoos/T4.jpg" alt="Traffic">
+              </a>
+          </div>
+          <div class="col-sm-6 col-md-6 ">
+              <a class="lightbox" href="img/tattoos/T8.jpg">
+                  <img src="img/tattoos/T8.jpg" alt="Coast">
+              </a>
+          </div> 
         </div>
-  </section>
+        </div>
+      </div>
+    
   <button class="picgallary" data-toggle="collapse" data-target="#MyTattoos">Click for more Pictures</button>
   <div id="MyTattoos" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center">
-        <div class="col-sm-6 col-md-3">
+        <div class="tat-gallery col-sm-6 col-md-3">
             <img src="img/tattoos/T5.jpg">
         </div>
       </div>
     </div>
   </div>
+</div>
+</section>
 <!--End Tattoos-->
 <hr class="hrright" id="drawings"> <!--Right Line-->
 
 <!--Start Drawings-->
   
   <section>
-        <div class="row">
-          <div class="col-8 col-md-6">
-              <img src="img/drawings/D4.jpg" width="300" height="300">
-          </div>
-          <div class="col-8 col-md-6 pull-right">
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="tz-gallery col-sm-12 col-md-7">
+                <div class="row">
+                  <div class="col-sm-12 col-md-4">
+                    <a class="lightbox" href="img/drawings/D1.jpg">
+                        <img src="img/drawings/D1.jpg" alt="Bridge">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="img/drawings/D2.jpg">
+                        <img src="img/drawings/D2.jpg" alt="Park">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="img/drawings/D3.jpg">
+                        <img src="img/drawings/D3.jpg" alt="Tunnel">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 ">
+                    <a class="lightbox" href="img/drawings/D4.jpg">
+                        <img src="img/drawings/D4.jpg" alt="Traffic">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-6 ">
+                    <a class="lightbox" href="img/drawings/D8.jpg">
+                        <img src="img/drawings/D8.jpg" alt="Coast">
+                    </a>
+                </div> 
+              </div>
+              </div>
+          <div class="col-8 col-md-5 pull-right">
             <h1>DRAWINGS</h1>
               <p id='DRAWINGS'></p>
               <script>
@@ -237,55 +211,107 @@
                </script>
           </div>
         </div>
-  </section>
+      </div>
+  
   <button class="picgallary" data-toggle="collapse" data-target="#MyDrawings">Click for more Pictures</button>
   <div id="MyDrawings" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center">
-        <div class="col-sm-6 col-md-3">
+        <div class="tat-gallery col-sm-6 col-md-3">
             <img src="img/drawings/D2.JPG">
         </div>
       </div>
     </div>
   </div>
-
+</div>
+</section>
   <hr class="hrleft" id="art">
 
   <!--Start 3D Art-->
   <section>
+    <div class="container-fluid">
     <div class= "row" >
-        <div class= "col-8 col-md-6">
+        <div class= "col-8 col-md-5">
           <h1>3D ART</h1>
          <p id='ART'></p>
         <script>
           $( "#ART" ).load( "text/Art.txt" );
         </script>
       </div>
-      <div class="col-8 col-md-6">
-          <img src="img/3D/3D1.jpg">
-      </div>
+      <div class="tz-gallery col-sm-12 col-md-7">
+          <div class="row">
+            <div class="col-sm-12 col-md-4">
+              <a class="lightbox" href="img/3D/3D1.jpg">
+                  <img src="img/3D/3D1.jpg" alt="Bridge">
+              </a>
+          </div>
+          <div class="col-sm-6 col-md-4">
+              <a class="lightbox" href="img/3D/3D2.jpg">
+                  <img src="img/3D/3D2.jpg" alt="Park">
+              </a>
+          </div>
+          <div class="col-sm-6 col-md-4">
+              <a class="lightbox" href="img/3D/3D3.jpg">
+                  <img src="img/3D/3D3.jpg" alt="Tunnel">
+              </a>
+          </div>
+          <div class="col-sm-12 col-md-6 ">
+              <a class="lightbox" href="img/3D/3D4.jpg">
+                  <img src="img/3D/3D4.jpg" alt="Traffic">
+              </a>
+          </div>
+          <div class="col-sm-6 col-md-6 ">
+              <a class="lightbox" href="img/3D/3D5.jpg">
+                  <img src="img/3D/3D5.jpg" alt="Coast">
+              </a>
+          </div> 
+        </div>
+        </div>
     </div>
-  </section>
+  
   <button class="picgallary" data-toggle="collapse" data-target="#My3D">Click for more Pictures</button>
   <div id="My3D" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center">
-        <div class="col-sm-6 col-md-3">
+        <div class="tat-gallery col-sm-6 col-md-4">
             <img src="img/3D/3D2.jpg">
         </div>
       </div>
     </div>
   </div>
-
+</div>
+</section>
       <hr class="hrright" id="street">
 
    <!--Start Street Art-->
    <section>
+      <div class="container-fluid">
       <div class= "row" >
-        <div class="col-8 col-md-6">
-           <img src="img/streetart/S3.jpg">
-        </div>
-          <div class= "col-8 col-md-6 pull-right">
+          <div class="tz-gallery col-sm-12 col-md-7">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <a class="lightbox" href="img/streetart/S1.jpg">
+                      <img src="img/streetart/S1.jpg" alt="Bridge">
+                  </a>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                  <a class="lightbox" href="img/streetart/S2.jpg">
+                    <img src="img/streetart/S2.jpg" alt="Bridge">
+                </a>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                  <a class="lightbox" href="img/streetart/S3.jpg">
+                    <img src="img/streetart/S3.jpg" alt="Bridge">
+                </a>
+              </div>
+              <div class="col-sm-12 col-md-6 ">
+                  <a class="lightbox" href="img/streetart/S4.jpg">
+                    <img src="img/streetart/S4.jpg" alt="Bridge">
+                </a>
+              </div>
+            </div>
+            </div>
+          <div class= "col-8 col-md-5 pull-right">
             <h1>STREET ART</h1>
            <p id='STREET'></p>
           <script>
@@ -293,43 +319,85 @@
           </script>
       </div>
     </div>
-  </section>
+  
   <button class="picgallary" data-toggle="collapse" data-target="#MyStreetart">Click for more Pictures</button>
   <div id="MyStreetart" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center">
-        <div class="col-sm-6 col-md-3">
+        <div class="tat-gallery col-sm-6 col-md-3">
             <img src="img/streetart/S2.jpg">
         </div>
       </div>
     </div>
   </div>
+</div>
+</section>
     <hr class="hrleft" id='graphic'>
   <!--Start Graphic Design-->
   <section>  
+      <div class="container-fluid">
       <div class="row">
-          <div class="col-8 col-md-6">
+          <div class="col-8 col-md-5">
             <h1>GRAPHIC DESIGN</h1>
               <p id='GRAPHIC'></p>
               <script>
                  $( "#GRAPHIC" ).load( "text/Design.txt" );
                </script>
           </div>
-          <div class="col-8 col-md-6">
-              <img src="img/gdesign/G2.jpg">
-          </div>
+          <div class="tz-gallery col-sm-12 col-md-7">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <a class="lightbox" href="img/gdesign/G1.jpg">
+                      <img src="img/gdesign/G1.jpg" alt="Bridge">
+                  </a>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                  <a class="lightbox" href="img/gdesign/G2.jpg">
+                    <img src="img/gdesign/G2.jpg" alt="Bridge">
+                </a>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                  <a class="lightbox" href="img/gdesign/G3.jpg">
+                    <img src="img/gdesign/G3.jpg" alt="Bridge">
+                </a>
+              </div>
+              <div class="col-sm-12 col-md-6 ">
+                  <a class="lightbox" href="img/gdesign/G4.jpg">
+                    <img src="img/gdesign/G4.jpg" alt="Bridge">
+                </a>
+              </div>
+              <div class="col-sm-6 col-md-6 ">
+                  <a class="lightbox" href="img/gdesign/G5.jpg">
+                    <img src="img/gdesign/G5.jpg" alt="Bridge">
+                </a>
+              </div> 
+            </div>
         </div>
-</section>
+
 <button class="picgallary" data-toggle="collapse" data-target="#MyGraphic">Click for more Pictures</button>
   <div id="MyGraphic" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center">
-        <div class="col-sm-6 col-md-3">
-            <img src="img/streetart/S3.JPG">
+        <div class="tat-gallery col-sm-6 col-md-3">
+            <img src="img/gdesign/G1.JPG">
+        </div>
+        <div class="tat-gallery col-sm-6 col-md-3">
+            <img src="img/gdesign/G2.JPG">
+        </div>
+        <div class="tat-gallery col-sm-6 col-md-3">
+            <img src="img/gdesign/G3.JPG">
+        </div>
+        <div class="tat-gallery col-sm-6 col-md-3">
+            <img src="img/gdesign/G4.JPG">
+        </div>
+        <div class="tat-gallery col-sm-6 col-md-3">
+            <img src="img/gdesign/G5.JPG">
         </div>
       </div>
     </div>
   </div>
+</div>
+</section>
   <hr class="hrright" id="street">
 
 <!--Footer Start-->
@@ -364,32 +432,11 @@
     </div>
       </footer>
 <!--End Footer-->
-<script>
-$(document).ready(function() {
-  $(window).on("scroll", function() {
-    if ($(window).scrollTop() >= 600) {
-      $(".navbar").addClass("compressed");
-    } else {
-      $(".navbar").removeClass("compressed");
-    }
-  });
-});
 
-$(document).ready(function() {
-  $(window).on("scroll", function() {
-    if ($(window).scrollTop() >= 400) {
-      $(".navbar").addClass("shrink");
-    } else {
-      $(".navbar").removeClass("shrink");
-    }
-  });
-});
-</script>
+<!--Javascript-->
+  <script type="text/javascript" src="jquery.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/imgloader.js"></script>
 
-<script>
-    $('.navbar-nav>li>a').on('click', function(){
-      $('.navbar-collapse').collapse('hide');
-    });
-    </script>
 </body>
 </html>
