@@ -159,7 +159,12 @@ h1{
     font-size: 1em;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
+    outline:0 !important;
 }
+
+.picgallary span {
+        border: 1px solid #ffbf00;
+    }
 
 
 
