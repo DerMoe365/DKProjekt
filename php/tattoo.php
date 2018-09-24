@@ -11,7 +11,7 @@ else {
 function getFileList()
 {
 	$out = array();
-	//$out = array("Nissan", "Toyota", "Yamaha");
+	//$out = array();
 	foreach (glob('../img/tattoos/main/*.jpg') as $path)
 	{
 		//$p = pathinfo($path);
