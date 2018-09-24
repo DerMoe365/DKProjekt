@@ -16,35 +16,30 @@
 		console.log("Files Array => " + files);
 			files.forEach(function(element)
 				{
-					console.log(element);
+                    console.log(element);
+                    var div = document.createElement("div");
+                    div.setAttribute("class", "tat-gallery col-sm-6 col-md-3");
+                   
+                    var image = document.createElement("a");
+                    image.setAttribute("href", element);
+                    image.setAttribute("data-toggle", "lightbox");
+                    image.setAttribute("data-gallery", "main-tattoo-gallery");
+                    
 					var newImage = document.createElement("IMG");
 					newImage.setAttribute("src", element);
-					newImage.setAttribute("width", "304");
-					newImage.setAttribute("height", "228");
-					document.getElementById("image_container").appendChild(newImage);
+                    newImage.setAttribute("class", "img-fluid");
+                    newImage.setAttribute("alt", "Tattoo");
+                    image.appendChild(newImage);
+                    div.appendChild(image);
+					document.getElementById("tattoo_container").appendChild(div);
 				});
 			}
 	}
-	
+     
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-	
-    function ajaxGetFileNames() {
-        return $.when($.ajax({
-                url: '/files.php',
-                method: 'POST',
-                data: 'get_file_json',
-                dataType: 'json'
-            }))
-            .then(null, function(jqXHR, textStatus, errorThrown) {
-			    console.log("XHR: ", jqXHR);
-				console.log("Err textStatus: ", textStatus);
-				console.log("Err thrown: ", errorThrown);
-                alert("Error sending request: " + errorThrown);
-            });
-    }
-	
+
     async function fetchJSONResponseData(ajax) {
         try {
             var myJSONReturn = await ajax;
@@ -54,8 +49,25 @@
             console.log('Error in fetchJSONResponseData:', error);
         }
     }
-	
-    function loadFileNameArray() {
+
+    function ajaxGetFileNames() {
+        return $.when($.ajax({
+                url: '/php/tattoo.php',
+                method: 'POST',
+                data: 'get_data_json',
+                dataType: 'json'
+            }))
+            .then(null, function(jqXHR, textStatus, errorThrown) {
+			    console.log("XHR: ", jqXHR);
+				console.log("Err textStatus: ", textStatus);
+				console.log("Err thrown: ", errorThrown);
+                alert("Error sending request: " + errorThrown);
+            });
+    }
+    
+    
+
+	function loadFileNameArray() {
         try {
             fetchJSONResponseData(ajaxGetFileNames()).then(function(data) {
                     console.log('loadedFileNames data:', data);
@@ -71,3 +83,8 @@
             console.log('Error in loadPatients:', error);
         }
     }
+    
+    
+    
+	
+   

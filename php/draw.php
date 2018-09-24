@@ -10,12 +10,12 @@ else {
 
 function getFileList()
 {
-	$out = array();
+	$outs = drawArray();
 	//$out = array("Nissan", "Toyota", "Yamaha");
-	foreach (glob('pictures/*.jpg') as $path)
+	foreach (glob('../img/drawings/main/*.jpg') as $paths)
 	{
 		//$p = pathinfo($path);
-	    $out[] = $path;
+	    $outs[] = $paths;
 	}
-	return $out;
+	return $outs;
 }
