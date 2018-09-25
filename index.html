@@ -160,10 +160,11 @@
         </div>
       </div>
       <!--Main-->
-  <button class="picgallary" data-toggle="collapse" data-target="#MyTattoos">Click for more Pictures</button>
+  <button class="picgallary" data-toggle="collapse" data-target="#MyTattoos" onclick="inner('get_tattoos','main-tattoo-gallery','Tattoos','tattoo_container');">Click for more Pictures</button>
   <div id="MyTattoos" class="collapse">
     <div class="container-fluid padding">
-      <div class="row text-center" id="tattoo_container">
+      <div class="row" id="tattoo_container">
+          
       </div>
     </div>
   </div>
@@ -213,7 +214,7 @@
           </div>
         </div>
       </div>
-  <button class="picgallary" data-toggle="collapse" data-target="#MyDrawings">Click for more Pictures</button>
+  <button class="picgallary" data-toggle="collapse" data-target="#MyDrawings" onclick="inner('get_drawings','main-draw-gallery','Drawings','draw_container');">Click for more Pictures</button>
   <div id="MyDrawings" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center" id="draw_container">
@@ -265,7 +266,7 @@
         </div>
         </div>
     </div>
-  <button class="picgallary" data-toggle="collapse" data-target="#My3D">Click for more Pictures</button>
+  <button class="picgallary" data-toggle="collapse" data-target="#My3D" onclick="inner('get_art','main-3D-gallery','3DArt','3D_container');">Click for more Pictures</button>
   <div id="My3D" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center" id="3D_container">
@@ -313,7 +314,7 @@
       </div>
     </div>
   
-  <button class="picgallary" data-toggle="collapse" data-target="#MyStreetart">Click for more Pictures</button>
+  <button class="picgallary" data-toggle="collapse" data-target="#MyStreetart" onclick="inner('get_street','main-street-gallery','Streetart','street_container');">Click for more Pictures</button>
   <div id="MyStreetart" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center" id="street_container">
@@ -364,7 +365,7 @@
               </div> 
             </div>
         </div>
-<button class="picgallary" data-toggle="collapse" data-target="#MyGraphic">Click for more Pictures</button>
+<button class="picgallary" data-toggle="collapse" data-target="#MyGraphic" onclick="inner('get_graphic','main-graphic-gallery','Graphic','graphic_container');">Click for more Pictures</button>
   <div id="MyGraphic" class="collapse">
     <div class="container-fluid padding">
       <div class="row text-center" id="graphic_container">
@@ -409,6 +410,6 @@
 
 <!--Javascript-->
   <script src="js/script.js"></script>
-  <script src="js/tattooloader.js"></script>
+  <script type="text/javascript" src="js/imgloader.js"></script>
 </body>
 </html>
