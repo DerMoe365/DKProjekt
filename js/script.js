@@ -10,10 +10,10 @@
         ow = 600;
       }
       if(580<w&&w<968){
-        ow = 400;
+        ow = 380;
       }
       if(w<580){
-        ow = 250;
+        ow = 200;
       }
       if ($(window).scrollTop() >= ow) {
         $(".navbar").addClass("compressed");
