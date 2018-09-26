@@ -30,6 +30,7 @@
     transition: all 0.3s;
 }
 
+/*Categories*/
 .nav-link {
     color: #ffbf00 !important;
     margin-left: 5px;
@@ -38,6 +39,7 @@
     outline: 0 !important;
 }
 
+/*Navbar-Logo*/
 .navbar-brand {
     min-width: 220px;
     width: 220px;
@@ -62,14 +64,16 @@ a.navbar-brand {
     padding-bottom: 0;
 }
 
+/*Navbar-sticky*/
 nav.navbar.sticky {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-  }
+}
 
+/*Navbar-Minimilze*/
 .navbar.compressed{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -100,6 +104,7 @@ body{
     font-size: 20px;
 }
 
+/*Heading of Personal Info*/
 .txt{
     padding-top: 10px;
 }
@@ -116,6 +121,7 @@ h1{
     height: 100%;
 }
 
+/*Padding for some rows*/
 .row.pad{
     padding-left: 30px;
 }
@@ -124,13 +130,7 @@ h1{
 .pers-img{
     padding: 0px 30px 30px 30px;
 }
-
-p.name{
-    font-size: 24px;
-    color: white;
-    padding-bottom: 4px;
-}
-
+/*padding for personal col*/
 .per{
     padding-top:0px;
 }
@@ -156,6 +156,7 @@ footer{
     color: white;
 }
 
+/*Facebook*/
 .fa{
     padding: 0px;
     font-size: 40px;
@@ -183,6 +184,7 @@ hr.footer{
  margin-bottom: 10px;
 }
 
+/*Google Maps*/
 .karte {
     -webkit-filter: grayscale(100%);
        -moz-filter: grayscale(100%);
@@ -191,9 +193,14 @@ hr.footer{
             filter: grayscale(100%) brightness(70%) contrast(200%);
 }
 
+/*Name*/
+p.name{
+    font-size: 24px;
+    color: white;
+    padding-bottom: 4px;
+}
 
 /**************More Pictures Gallery*************/
-
 .picgallary {
     width: 100%;
     background-color: transparent;
@@ -217,6 +224,7 @@ hr.footer{
     opacity: 0.7;    
 }
 
+/*Class of the Pictures in Main Gallery*/
 .tat-gallery img{
     width: 100%;
     border-radius: 0;
