@@ -29,7 +29,7 @@
     min-height: 50px;
     transition: all 0.3s;
 }
-/*Categories*/
+
 .nav-link {
     color: #ffbf00 !important;
     margin-left: 5px;
@@ -37,7 +37,7 @@
     letter-spacing: 3px;
     outline: 0 !important;
 }
-/*Logo*/
+
 .navbar-brand {
     min-width: 220px;
     width: 220px;
@@ -61,7 +61,7 @@ a.navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
 }
-/*Navbar sticky*/
+
 nav.navbar.sticky {
     width: 100%;
     position: fixed;
@@ -69,7 +69,7 @@ nav.navbar.sticky {
     left: 0;
     z-index: 9999;
   }
-/*Navbar Minimilize*/
+
 .navbar.compressed{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -99,8 +99,8 @@ body{
 .col-md-7{
     font-size: 20px;
 }
-/*Personal Info Header*/
-.headtxt{
+
+.txt{
     padding-top: 10px;
 }
 
@@ -116,7 +116,6 @@ h1{
     height: 100%;
 }
 
-/*Padding for some rows*/
 .row.pad{
     padding-left: 30px;
 }
@@ -126,8 +125,13 @@ h1{
     padding: 0px 30px 30px 30px;
 }
 
-/*Padding for Personal Info*/
-.perpad{
+p.name{
+    font-size: 24px;
+    color: white;
+    padding-bottom: 4px;
+}
+
+.per{
     padding-top:0px;
 }
 
@@ -151,7 +155,7 @@ footer{
     background-color: #373737;
     color: white;
 }
-/*Facebook-class*/
+
 .fa{
     padding: 0px;
     font-size: 40px;
@@ -179,7 +183,7 @@ hr.footer{
  margin-bottom: 10px;
 }
 
-.map {
+.karte {
     -webkit-filter: grayscale(100%);
        -moz-filter: grayscale(100%);
         -ms-filter: grayscale(100%);
@@ -187,12 +191,6 @@ hr.footer{
             filter: grayscale(100%) brightness(70%) contrast(200%);
 }
 
-/*Name in Footer*/
-p.name{
-    font-size: 24px;
-    color: white;
-    padding-bottom: 4px;
-}
 
 /**************More Pictures Gallery*************/
 
@@ -219,7 +217,6 @@ p.name{
     opacity: 0.7;    
 }
 
-/*Class of the loaded Pictures of Main Gallery*/
 .tat-gallery img{
     width: 100%;
     border-radius: 0;
@@ -228,16 +225,16 @@ p.name{
 }
 
 /**************Preview Gallery*************/
-.pv-gallery {
+.tz-gallery {
 
     padding: 30px 50px;
 }
 
-.pv-gallery .row > div {
+.tz-gallery .row > div {
     padding: 6px;
 }
 
-.pv-gallery img {
+.tz-gallery img {
     width: 100%;
 /*    height: 100%; */
     border-radius: 0;
